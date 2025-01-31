@@ -23,9 +23,9 @@
         <div class="text-[12vw] leading-none tracking-tight opacity-0 animate-fade">
             WORD
             <div class="flex items-center">
-                <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 origin-left transition-transform duration-1000 delay-300"></div>
+                <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 origin-left transition-transform duration-1000 delay-500"></div>
                 NERD
-                <span class="ml-4 text-[8vw] opacity-60">®</span>
+                <span class="ml-4 text-[8vw] opacity-60">;)</span>
             </div>
         </div>
 
@@ -46,13 +46,13 @@
     document.addEventListener('DOMContentLoaded', function() {
         // Fade in title
         const title = document.querySelector('.animate-fade');
-        title.style.opacity = '1';
+        
         
         // Grow line animation
         const line = document.querySelector('.scale-x-0');
         setTimeout(() => {
             line.style.transform = 'scaleX(1)';
-        }, 300);
+        }, 800);
     });
     </script>
 </body>

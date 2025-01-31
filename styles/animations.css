@@ -14,8 +14,8 @@
 }
 
 .animate-fade {
-  animation: fadeIn 1s ease-in forwards;
-}
+  animation: fadeIn 1.5s ease-out forwards; 
+animation-delay: 0.3s}
 
 .animate-bounce {
   animation: bounce 2s infinite;
@@ -33,4 +33,5 @@
 .transition-transform {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 1500ms;
 }

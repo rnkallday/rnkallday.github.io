@@ -7,21 +7,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- We'll add styles next -->
 </head>
-<body>
-    <!-- Navigation -->
-    <header>
-        <nav>
-            <a href="/work">WORK</a>
-            <a href="/about">ABOUT</a>
-            <a href="/contact">CONTACT</a>
+   <body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
+    <header class="p-6 flex justify-between items-center">
+        <div class="text-sm opacity-80">Based in Creative Development</div>
+        <nav class="flex gap-6">
+            <a href="/work" class="hover:opacity-80">WORK</a>
+            <a href="/about" class="hover:opacity-80">ABOUT</a>
+            <a href="/contact" class="hover:opacity-80">CONTACT</a>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <h1>WORD NERD</h1>
-        <p>A PORTFOLIO OF MULTIMEDIA WORK</p>
-        <p>CREATED BY RIAN KOCHEL</p>
-    </main>
+    <main class="p-6">
+        <div class="text-[12vw] leading-none tracking-tight">
+            WORD
+            <div class="flex items-center">
+                <div class="flex-grow h-[0.8vw] bg-white mr-4"></div>
+                NERD
+                <span class="ml-4 text-[8vw] opacity-60">®</span>
+            </div>
+        </div>
+
+        <div class="mt-20 text-2xl">
+            <p>A PORTFOLIO OF MULTIMEDIA WORK</p>
+            <p>CREATED BY RIAN KOCHEL</p>
+        </div>
 </body>
 </html>

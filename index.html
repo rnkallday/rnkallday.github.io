@@ -18,19 +18,39 @@
         </nav>
     </header>
 
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rian's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles/animations.css">
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
+    <header class="p-6 flex justify-between items-center">
+        <div class="text-sm opacity-80">Based in Creative Development</div>
+        <nav class="flex gap-6">
+            <a href="/work" class="hover:opacity-80">WORK</a>
+            <a href="/about" class="hover:opacity-80">ABOUT</a>
+            <a href="/contact" class="hover:opacity-80">CONTACT</a>
+        </nav>
+    </header>
+
     <main class="p-6">
-<div class="text-[12vw] leading-none tracking-tight opacity-0 animate-fade" 
-     style="animation-delay: 400ms">
-    WORD
-    <div class="flex items-center">
-        <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 
-                    origin-left transition-transform duration-1000 
-                    delay-500"> <!-- Increased delay -->
+        <!-- Removed opacity-0 here -->
+        <div class="text-[12vw] leading-none tracking-tight animate-fade">
+            WORD
+            <div class="flex items-center">
+                <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 
+                            origin-left transition-transform duration-1000 
+                            delay-500">
+                </div>
+                NERD
+                <span class="ml-4 text-[8vw] opacity-60">®</span>
+            </div>
         </div>
-        NERD
-        <span class="ml-4 text-[8vw] opacity-60">®</span>
-    </div>
-</div>
 
         <div class="mt-20 text-2xl">
             <p>A PORTFOLIO OF MULTIMEDIA WORK</p>
@@ -38,7 +58,6 @@
         </div>
     </main>
 
-    <!-- Scroll indicator moved outside main -->
     <div class="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <div class="w-6 h-10 border-2 border-white rounded-full relative">
             <div class="w-1 h-2 bg-white absolute top-2 left-1/2 -translate-x-1/2 animate-scroll"></div>
@@ -47,10 +66,6 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Fade in title
-        const title = document.querySelector('.animate-fade');
-        
-        
         // Grow line animation
         const line = document.querySelector('.scale-x-0');
         setTimeout(() => {

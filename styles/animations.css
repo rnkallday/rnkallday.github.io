@@ -1,27 +1,39 @@
+/* Fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes growLine {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+/* Bouncing animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.fade-in {
-  animation: fadeIn 1s forwards;
+/* Scroll indicator animation */
+@keyframes scroll {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(8px); opacity: 0; }
 }
 
-.grow-line {
-  animation: growLine 1s ease-out forwards;
-  transform-origin: left;
+.animate-fade {
+  animation: fadeIn 1s ease-in forwards;
 }
 
-.scroll-indicator {
+.animate-bounce {
   animation: bounce 2s infinite;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+.animate-scroll {
+  animation: scroll 1.5s infinite;
+}
+
+/* Add this for line animation */
+.scale-x-0 {
+  transform: scaleX(0);
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

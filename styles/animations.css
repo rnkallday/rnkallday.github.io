@@ -13,9 +13,9 @@
   100% { transform: translateY(8px); opacity: 0; }
 }
 
-..animate-fade {
+.animate-fade {
   animation: fadeIn 1.5s ease-out forwards;
-  animation-delay: 0.5s;
+  animation-delay: 1s;
 }
 
 .animate-bounce {

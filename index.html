@@ -1,30 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Rian's Portfolio</title>
-      <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rian's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/styles/animations.css">
-    </head>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Fade in title
-    const title = document.querySelector('.animate-fade');
-    title.style.opacity = '1';
-    
-    // Grow line animation
-    const line = document.querySelector('.scale-x-0');
-    setTimeout(() => {
-        line.style.transform = 'scaleX(1)';
-    }, 300);
-    
-    // Scroll indicator animation
-    const scrollDot = document.querySelector('.scroll-indicator div div');
-    scrollDot.style.animation = 'scroll 1.5s infinite';
-});
-</script>
-   <body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
     <header class="p-6 flex justify-between items-center">
         <div class="text-sm opacity-80">Based in Creative Development</div>
         <nav class="flex gap-6">
@@ -34,16 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
         </nav>
     </header>
 
-    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <div class="w-6 h-10 border-2 border-white rounded-full relative">
-        <div class="w-1 h-2 bg-white absolute top-2 left-1/2 -translate-x-1/2 animate-scroll"></div>
-    </div>
-</div>
-      </div><main class="p-6">
-      <div class="text-[12vw] leading-none tracking-tight opacity-0 animate-fade">
+    <main class="p-6">
+        <!-- Fixed missing < in div below -->
+        <div class="text-[12vw] leading-none tracking-tight opacity-0 animate-fade">
             WORD
             <div class="flex items-center">
-                div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 origin-left transition-transform duration-1000 delay-300">
+                <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 origin-left transition-transform duration-1000 delay-300"></div>
                 NERD
                 <span class="ml-4 text-[8vw] opacity-60">®</span>
             </div>
@@ -53,5 +33,27 @@ document.addEventListener('DOMContentLoaded', function() {
             <p>A PORTFOLIO OF MULTIMEDIA WORK</p>
             <p>CREATED BY RIAN KOCHEL</p>
         </div>
+    </main>
+
+    <!-- Scroll indicator moved outside main -->
+    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div class="w-6 h-10 border-2 border-white rounded-full relative">
+            <div class="w-1 h-2 bg-white absolute top-2 left-1/2 -translate-x-1/2 animate-scroll"></div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fade in title
+        const title = document.querySelector('.animate-fade');
+        title.style.opacity = '1';
+        
+        // Grow line animation
+        const line = document.querySelector('.scale-x-0');
+        setTimeout(() => {
+            line.style.transform = 'scaleX(1)';
+        }, 300);
+    });
+    </script>
 </body>
 </html>

@@ -26,7 +26,7 @@
   animation: scroll 1.5s infinite;
 }
 
-/* Add this for line animation */
+
 .scale-x-0 {
   transform: scaleX(0);
 }

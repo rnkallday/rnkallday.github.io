@@ -1,6 +1,3 @@
-Here is the updated code with the line animation duration extended by 2 seconds and the "Based in Creative Development" line removed:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +21,9 @@ Here is the updated code with the line animation duration extended by 2 seconds 
         .fade-in-move {
             animation: fadeInMove 1s ease-out forwards;
         }
+        .interactive-text {
+            transition: transform 0.2s ease;
+        }
     </style>
 </head>
 
@@ -37,12 +37,12 @@ Here is the updated code with the line animation duration extended by 2 seconds 
     </header>
 
     <main class="p-6">
-        <div id="word-nerd" class="text-[12vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move">
+        <div id="word-nerd" class="text-[13.5vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
             WORD
-            <div class="flex items-center h-full">
-                <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 origin-left animate-spread"></div>
+            <div class="flex items-center h-full interactive-text">
+                <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 origin-left animate-spread interactive-text"></div>
                 NERD
-                <span class="ml-4 text-[8vw] opacity-60">®</span>
+                <span class="ml-4 text-[9.5vw] opacity-60">®</span>
             </div>
         </div>
 
@@ -51,11 +51,6 @@ Here is the updated code with the line animation duration extended by 2 seconds 
             <p>CREATED BY RIAN KOCHEL</p>
         </div>
     </main>
-    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div class="w-6 h-10 border-2 border-white rounded-full relative">
-            <div class="w-1 h-2 bg-white absolute top-2 left-1/2 -translate-x-1/2 animate-scroll"></div>
-        </div>
-    </div>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -70,10 +65,19 @@ Here is the updated code with the line animation duration extended by 2 seconds 
         setTimeout(() => {
             wordNerd.classList.remove('opacity-0');
         }, 500);
+
+        // Interactive text animation with mouse movement
+        const interactiveElements = document.querySelectorAll('.interactive-text');
+        document.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            interactiveElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const dx = (clientX - rect.left - rect.width / 2) / rect.width;
+                const dy = (clientY - rect.top - rect.height / 2) / rect.height;
+                el.style.transform = `scale(${1 + dx * 0.05}, ${1 + dy * 0.05})`;
+            });
+        });
     });
     </script>
 </body>
 </html>
-```
-
-Please update your `index.html` with this code.

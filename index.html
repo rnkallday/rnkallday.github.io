@@ -1,3 +1,6 @@
+Here is the updated code with the line animation duration extended by 2 seconds and the "Based in Creative Development" line removed:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +29,6 @@
 
 <body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
     <header class="p-6 flex justify-between items-center">
-        <div class="text-sm opacity-80">Based in Creative Development</div>
         <nav class="flex gap-6">
             <a href="/work" class="hover:opacity-80">WORK</a>
             <a href="/about" class="hover:opacity-80">ABOUT</a>
@@ -61,7 +63,7 @@
         const line = document.querySelector('.scale-x-0');
         setTimeout(() => {
             line.style.transform = 'scaleX(1)';
-        }, 800);
+        }, 2800); // Extend animation duration by 2 seconds
 
         // Fade-in and move animation for WORD NERD
         const wordNerd = document.getElementById('word-nerd');
@@ -72,3 +74,6 @@
     </script>
 </body>
 </html>
+```
+
+Please update your `index.html` with this code.

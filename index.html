@@ -19,37 +19,33 @@
     </header>
 
     <main class="p-6">
-        <div class="text-[12vw] leading-none tracking-tight animate-fade">
-            WORD
-            <div class="flex items-center">
-                <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 
-                            origin-left transition-transform">
-                </div>
-                NERD
-                <span class="ml-4 text-[8vw] opacity-60">®</span>
+       <div class="text-[12vw] leading-none tracking-tight opacity-0 transition-opacity duration-500">
+        WORD
+        <div class="flex items-center h-full">
+            <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 origin-left animate-spread">
             </div>
-        </div>
-
-        <div class="mt-20 text-2xl">
-            <p>A PORTFOLIO OF MULTIMEDIA WORK</p>
-            <p>CREATED BY RIAN KOCHEL</p>
-        </div>
-    </main>
-
-    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div class="w-6 h-10 border-2 border-white rounded-full relative">
-            <div class="w-1 h-2 bg-white absolute top-2 left-1/2 -translate-x-1/2 animate-scroll"></div>
+            NERD
+            <span class="ml-4 text-[8vw] opacity-60">®</span>
         </div>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Grow line animation
-        const line = document.querySelector('.scale-x-0');
-        setTimeout(() => {
-            line.style.transform = 'scaleX(1)';
-        }, 800);
-    });
-    </script>
-</body>
-</html>
+    <div class="mt-20 text-2xl">
+        <p>A PORTFOLIO OF MULTIMEDIA WORK</p>
+        <p>CREATED BY RIAN KOCHEL</p>
+    </div>
+</main>
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <div class="w-6 h-10 border-2 border-white rounded-full relative">
+        <div class="w-1 h-2 bg-white absolute top-2 left-1/2 -translate-x-1/2 animate-scroll"></div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Grow line animation
+    const line = document.querySelector('.scale-x-0');
+    setTimeout(() => {
+        line.style.transform = 'scaleX(1)';
+    }, 800);
+});
+</script>

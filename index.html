@@ -6,6 +6,22 @@
     <title>Rian's Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/styles/animations.css">
+    <style>
+        /* Add CSS for fade-in and move animation */
+        @keyframes fadeInMove {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-move {
+            animation: fadeInMove 1s ease-out forwards;
+        }
+    </style>
 </head>
 
 <body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
@@ -19,33 +35,40 @@
     </header>
 
     <main class="p-6">
-       <div class="text-[12vw] leading-none tracking-tight opacity-0 transition-opacity duration-500">
-        WORD
-        <div class="flex items-center h-full">
-            <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 origin-left animate-spread">
+        <div id="word-nerd" class="text-[12vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move">
+            WORD
+            <div class="flex items-center h-full">
+                <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 origin-left animate-spread"></div>
+                NERD
+                <span class="ml-4 text-[8vw] opacity-60">®</span>
             </div>
-            NERD
-            <span class="ml-4 text-[8vw] opacity-60">®</span>
+        </div>
+
+        <div class="mt-20 text-2xl">
+            <p>A PORTFOLIO OF MULTIMEDIA WORK</p>
+            <p>CREATED BY RIAN KOCHEL</p>
+        </div>
+    </main>
+    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div class="w-6 h-10 border-2 border-white rounded-full relative">
+            <div class="w-1 h-2 bg-white absolute top-2 left-1/2 -translate-x-1/2 animate-scroll"></div>
         </div>
     </div>
 
-    <div class="mt-20 text-2xl">
-        <p>A PORTFOLIO OF MULTIMEDIA WORK</p>
-        <p>CREATED BY RIAN KOCHEL</p>
-    </div>
-</main>
-<div class="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <div class="w-6 h-10 border-2 border-white rounded-full relative">
-        <div class="w-1 h-2 bg-white absolute top-2 left-1/2 -translate-x-1/2 animate-scroll"></div>
-    </div>
-</div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Grow line animation
+        const line = document.querySelector('.scale-x-0');
+        setTimeout(() => {
+            line.style.transform = 'scaleX(1)';
+        }, 800);
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Grow line animation
-    const line = document.querySelector('.scale-x-0');
-    setTimeout(() => {
-        line.style.transform = 'scaleX(1)';
-    }, 800);
-});
-</script>
+        // Fade-in and move animation for WORD NERD
+        const wordNerd = document.getElementById('word-nerd');
+        setTimeout(() => {
+            wordNerd.classList.remove('opacity-0');
+        }, 500);
+    });
+    </script>
+</body>
+</html>

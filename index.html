@@ -40,13 +40,18 @@
         <div id="word-nerd" class="text-[13.5vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
             WORD
             <div class="flex items-center h-full interactive-text">
-                <div class="flex-grow h-[0.8vw] bg-white mr-4 scale-x-0 origin-left animate-spread interactive-text"></div>
+                <div class="flex-grow h-[0.5vw] bg-white mr-4 scale-x-0 origin-left animate-spread interactive-text"></div>
                 NERD
-                <span class="ml-4 text-[9.5vw] opacity-60">®</span>
+                <span class="ml-4 text-[9.5vw] opacity-60">
+                    <!-- Icon of a pair of glasses -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="1em" height="1em">
+                        <path d="M12 3C7.032 3 2.5 6.11 2.5 10c0 1.325.465 2.59 1.338 3.669.609.777 1.417 1.395 2.337 1.768.492.2.983.363 1.484.486a7.49 7.49 0 0 1 2.341 1.33A7.49 7.49 0 0 1 12 19.5c.867 0 1.708-.151 2.5-.43.492-.123.983-.286 1.484-.486.92-.373 1.728-.991 2.337-1.768A6.478 6.478 0 0 0 21.5 10c0-3.89-4.532-7-9.5-7zm0 2c4.138 0 7.5 2.187 7.5 5s-3.362 5-7.5 5-7.5-2.187-7.5-5 3.362-5 7.5-5zM5 10.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm14 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                    </svg>
+                </span>
             </div>
         </div>
 
-        <div class="mt-20 text-2xl">
+        <div class="mt-20 text-[2.1875rem]"> <!-- Increased by 1.5 points (2.1875rem is 35px) -->
             <p>A PORTFOLIO OF MULTIMEDIA WORK</p>
             <p>CREATED BY RIAN KOCHEL</p>
         </div>
@@ -74,7 +79,9 @@
                 const rect = el.getBoundingClientRect();
                 const dx = (clientX - rect.left - rect.width / 2) / rect.width;
                 const dy = (clientY - rect.top - rect.height / 2) / rect.height;
-                el.style.transform = `scale(${1 + dx * 0.05}, ${1 + dy * 0.05})`;
+                const scaleWidth = 1 + dx * 0.02; // Reduced scale width parameter
+                const scaleHeight = 1 + dy * 0.02; // Reduced scale height parameter
+                el.style.transform = `scale(${scaleWidth}, ${scaleHeight})`;
             });
         });
     });

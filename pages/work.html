@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rian's Work</title>
+    <title>Contact - Rian's Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/styles/animations.css">
     <style>
@@ -18,25 +18,6 @@
             font-family: 'Chunk', sans-serif;
         }
 
-        @keyframes fadeInMove {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-move {
-            animation: fadeInMove 1s ease-out forwards;
-        }
-
-        .interactive-text {
-            transition: transform 0.2s ease;
-        }
-
         .draw-line {
             width: 0;
             height: 4px;
@@ -48,9 +29,35 @@
 <body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
     <header class="p-6 flex justify-between items-center">
         <nav class="flex flex-col gap-4 fixed bottom-6 right-6 text-lg">
+            <a href="index.html" class="hover:opacity-80">HOME</a>
             <a href="about.html" class="hover:opacity-80">ABOUT</a>
             <a href="work.html" class="hover:opacity-80">WORK</a>
-            <a href="contact.html" class="hover:opacity-80">CONTACT</a>
         </nav>
     </header>
-    ...
+
+    <main class="p-6">
+        <div id="contact-title" class="text-[13.5vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
+            CONTACT
+            <div class="draw-line mt-2"></div>
+        </div>
+        <div class="mt-20 text-[2.1875rem]">
+            <p>LET'S CONNECT!</p>
+            <p>Email: <a href="mailto:youremail@example.com" class="underline hover:opacity-80">youremail@example.com</a></p>
+        </div>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const line = document.querySelector('.draw-line');
+        setTimeout(() => {
+            line.style.width = '100%';
+        }, 1500);
+
+        const contactTitle = document.getElementById('contact-title');
+        setTimeout(() => {
+            contactTitle.classList.remove('opacity-0');
+        }, 500);
+    });
+    </script>
+</body>
+</html>

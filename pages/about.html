@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Rian's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles/animations.css">
+    <style>
+        @font-face {
+            font-family: 'Chunk';
+            src: url('/fonts/chunk.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Chunk', sans-serif;
+        }
+
+        @keyframes fadeInMove {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-move {
+            animation: fadeInMove 1s ease-out forwards;
+        }
+
+        .interactive-text {
+            transition: transform 0.2s ease;
+        }
+
+        .draw-line {
+            width: 0;
+            height: 4px;
+            background-color: white;
+            transition: width 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
+    <header class="p-6 flex justify-between items-center">
+        <nav class="flex flex-col gap-4 fixed bottom-6 right-6 text-lg">
+            <a href="/work" class="hover:opacity-80">WORK</a>
+            <a href="/about" class="hover:opacity-80">ABOUT</a>
+            <a href="/contact" class="hover:opacity-80">CONTACT</a>
+        </nav>
+    </header>
+
+    <main class="p-6">
+        <div id="about-title" class="text-[13.5vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
+            ABOUT
+            <div class="flex items-center h-full interactive-text">
+                <div class="draw-line mr-4"></div>
+                ME
+            </div>
+        </div>
+
+        <div class="mt-20 text-[1.5rem] max-w-prose">
+            <p>Hello! I'm Rian Kochel, a multidisciplinary creative with a passion for storytelling, design, and all things intriguing. I craft multimedia experiences that are dynamic, moody, and a little mysterious—just like the vibe you're seeing here.</p>
+            <p>My journey spans writing, music, and creative AI coaching, with an aim to help people uncover their unique stories. Let's connect and explore the magic of creativity together!</p>
+        </div>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Draw line animation
+        const line = document.querySelector('.draw-line');
+        setTimeout(() => {
+            line.style.width = '100%';
+        }, 1500);
+
+        // Fade-in animation for ABOUT ME
+        const aboutTitle = document.getElementById('about-title');
+        setTimeout(() => {
+            aboutTitle.classList.remove('opacity-0');
+        }, 500);
+
+        // Interactive text animation with mouse movement
+        const interactiveElements = document.querySelectorAll('.interactive-text');
+        document.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            interactiveElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const dx = (clientX - rect.left - rect.width / 2) / rect.width;
+                const dy = (clientY - rect.top - rect.height / 2) / rect.height;
+                const scaleWidth = 1 + dx * 0.02;
+                const scaleHeight = 1 + dy * 0.02;
+                el.style.transform = `scale(${scaleWidth}, ${scaleHeight})`;
+            });
+        });
+    });
+    </script>
+</body>
+</html>

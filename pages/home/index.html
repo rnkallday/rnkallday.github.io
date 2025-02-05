@@ -36,6 +36,13 @@
         .interactive-text {
             transition: transform 0.2s ease;
         }
+
+        .draw-line {
+            width: 0;
+            height: 4px;
+            background-color: white;
+            transition: width 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
     </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
@@ -51,7 +58,7 @@
         <div id="word-nerd" class="text-[13.5vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
             WORD
             <div class="flex items-center h-full interactive-text">
-                <div class="flex-grow h-[0.5vw] bg-white mr-4 scale-x-0 origin-right interactive-text"></div>
+                <div class="draw-line mr-4"></div>
                 NERD
             </div>
         </div>
@@ -64,12 +71,10 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Grow line animation from right to left with easing effect
-        const line = document.querySelector('.scale-x-0');
-        line.style.transformOrigin = 'right';
+        // Draw line animation similar to Studio Kay's style
+        const line = document.querySelector('.draw-line');
         setTimeout(() => {
-            line.style.transition = 'transform 2s cubic-bezier(0.68, -0.55, 0.27, 1.55)';
-            line.style.transform = 'scaleX(1)';
+            line.style.width = '100%';
         }, 1500);
 
         // Fade-in and move animation for WORD NERD

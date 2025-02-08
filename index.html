@@ -54,4 +54,51 @@
         </nav>
     </header>
 
-    <main class="p-
+    <main class="p-6">
+        <!-- Restored "Word Nerd" Title & Animation -->
+        <div id="word-nerd" class="text-[13.5vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
+            WORD
+            <div class="flex items-center h-full interactive-text">
+                <div class="draw-line mr-4"></div>
+                NERD
+            </div>
+        </div>
+
+        <!-- Portfolio Intro Text -->
+        <div class="mt-20 text-[2.1875rem]">
+            <p>A PORTFOLIO OF MULTIMEDIA WORK</p>
+            <p>CREATED BY RIAN KOCHEL</p>
+        </div>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Restore Draw Line Animation
+        const line = document.querySelector('.draw-line');
+        setTimeout(() => {
+            line.style.width = '100%';
+        }, 1500);
+
+        // Restore Fade-in Animation for "WORD NERD"
+        const wordNerd = document.getElementById('word-nerd');
+        setTimeout(() => {
+            wordNerd.classList.remove('opacity-0');
+        }, 500);
+
+        // Restore Interactive Mouse Movement Effect
+        const interactiveElements = document.querySelectorAll('.interactive-text');
+        document.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            interactiveElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const dx = (clientX - rect.left - rect.width / 2) / rect.width;
+                const dy = (clientY - rect.top - rect.height / 2) / rect.height;
+                const scaleWidth = 1 + dx * 0.02;
+                const scaleHeight = 1 + dy * 0.02;
+                el.style.transform = `scale(${scaleWidth}, ${scaleHeight})`;
+            });
+        });
+    });
+    </script>
+</body>
+</html>

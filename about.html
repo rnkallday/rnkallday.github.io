@@ -6,6 +6,7 @@
     <title>About - Rian Kochel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/styles/animations.css">
+    
     <style>
         @font-face {
             font-family: 'Chunk';
@@ -24,11 +25,11 @@
         }
 
         @keyframes fadeIn {
-            0% {
+            from {
                 opacity: 0;
                 transform: translateY(20px);
             }
-            100% {
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
@@ -41,21 +42,36 @@
             transition: width 1.5s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
+        /* Bio text - Left aligned */
         .bio-text {
             max-width: 800px;
             margin: 40px auto;
             font-size: 1.25rem;
             line-height: 1.6;
+            text-align: left; /* Left align text */
         }
 
+        /* Illustration Fix */
         .illustration {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 150px; /* Adjust as needed */
+            position: absolute; /* Change from fixed */
+            bottom: 10%;
+            left: 10%;
+            width: 200px; /* Adjusted for better scaling */
+            max-width: 30vw; /* Responsive size */
             opacity: 0;
             animation: fadeIn 2s ease-in-out forwards;
         }
+
+        /* Ensure flexbox layout */
+        .about-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            max-width: 80%;
+            margin: 40px auto;
+        }
+
     </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
@@ -67,23 +83,26 @@
         </nav>
     </header>
 
-    <main class="p-6 text-center">
+    <main class="p-6">
         <div id="about-title" class="text-[10vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in">
             ABOUT
             <div class="draw-line mt-2"></div>
         </div>
 
-        <div class="bio-text fade-in">
-            <p>Rian Kochel tells stories—some with words, some with music, all with intent. A writer, musician, and creative technologist, he stands at the crossroads of tradition and progress, watching the world evolve and dragging the skeptics along for the ride. His work spans across a wide variance - from art and culture to AI - and it can be found published in places that care about such things.</p>
-            
-            <p>He’s washed dishes with ex-convicts, raised millions for the arts, and learned that the only real job security is curiosity. Rian doesn’t believe AI can steal your soul, but he is certain it can make you forget you had one. He writes to remind you of this.</p>
-            
-            <p>Rian is “that” guy with the untamed mohawk and worn-in 501s on the morning train. He’ll also be “that” guy you swear you know from somewhere in a finely tailored tux at the opera tonight. And when you blink during your double take, you might just see yourself reflected in his work.</p>
+        <div class="about-container">
+            <!-- Illustration -->
+            <img src="/images/rian-illustration.png" alt="Illustration of Rian Kochel" class="illustration fade-in">
+
+            <!-- Bio Text -->
+            <div class="bio-text fade-in">
+                <p>Rian Kochel tells stories—some with words, some with music, all with intent. A writer, musician, and creative technologist, he stands at the crossroads of tradition and progress, watching the world evolve and dragging the skeptics along for the ride. His work spans across a wide variance - from art and culture to AI - and it can be found published in places that care about such things.</p>
+                
+                <p>He’s washed dishes with ex-convicts, raised millions for the arts, and learned that the only real job security is curiosity. Rian doesn’t believe AI can steal your soul, but he is certain it can make you forget you had one. He writes to remind you of this.</p>
+                
+                <p>Rian is “that” guy with the untamed mohawk and worn-in 501s on the morning train. He’ll also be “that” guy you swear you know from somewhere in a finely tailored tux at the opera tonight. And when you blink during your double take, you might just see yourself reflected in his work.</p>
+            </div>
         </div>
     </main>
-
-    <!-- Illustration -->
-    <img src="/images/rian-illustration.png" alt="Illustration of Rian Kochel" class="illustration fade-in">
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {

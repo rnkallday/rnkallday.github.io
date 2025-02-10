@@ -53,4 +53,34 @@
             <a href="contact.html" class="hover:opacity-80">CONTACT</a>
         </nav>
     </header>
-    ...
+
+    <main class="p-6">
+        <!-- Contact Content -->
+        <div id="contact-title" class="text-[10vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
+            CONTACT
+            <div class="draw-line mt-2"></div>
+        </div>
+
+        <div class="mt-20 text-[2.1875rem]">
+            <p>Feel free to reach out to me.</p>
+            <!-- Add your contact content here -->
+        </div>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Restore Draw Line Animation
+        const line = document.querySelector('.draw-line');
+        setTimeout(() => {
+            line.style.width = '100%';
+        }, 1500);
+
+        // Restore Fade-in Animation for "CONTACT"
+        const contactTitle = document.getElementById('contact-title');
+        setTimeout(() => {
+            contactTitle.classList.remove('opacity-0');
+        }, 500);
+    });
+    </script>
+</body>
+</html>

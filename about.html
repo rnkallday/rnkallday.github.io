@@ -70,15 +70,16 @@
         }
 
         .illustration {
-            grid-column: 2 / 3;
-            grid-row: 2;
-            width: 100%;
-            max-width: 300px;
-            opacity: 0;
-            filter: invert(1);
-            animation: fadeInDelayed 2.5s ease-in-out 1.5s forwards;
-            border: 2px solid red; /* Debugging border */
-        }
+    grid-column: 2 / 3;
+    grid-row: 2;
+    width: 100%;
+    max-width: 300px;
+    opacity: 0;
+    filter: invert(1);
+    mix-blend-mode: screen;
+    animation: fadeInDelayed 2.5s ease-in-out 1.5s forwards;
+}
+
 
         @keyframes fadeInDelayed {
             from {

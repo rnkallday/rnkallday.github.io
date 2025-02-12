@@ -1,6 +1,6 @@
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes bounce {
@@ -11,6 +11,11 @@
 @keyframes scroll {
   0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(8px); opacity: 0; }
+}
+
+@keyframes fadeInDelayed {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .animate-fade {
@@ -26,6 +31,15 @@
   animation: scroll 1.5s infinite;
 }
 
+.illustration {
+  width: 100%;
+  max-width: 300px;
+  opacity: 0;
+  filter: invert(1);
+  mix-blend-mode: screen;
+  animation: fadeInDelayed 2.5s ease-in-out 1.5s forwards;
+}
+
 .scale-X-0 {
   transform: scaleX(0);
 }
@@ -34,7 +48,4 @@
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 1500ms;
-}
-.illustration {
-  mix-blend-mode: screen;
 }

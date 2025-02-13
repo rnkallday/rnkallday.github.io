@@ -66,11 +66,18 @@
         }
 
         .illustration {
-            width: 100%;
-            max-width: 300px;
+            position: fixed;
+            bottom: 150px;  /* Move up */
+            right: 100px;  /* Move left */
+            width: 175px;
             opacity: 0;
-            filter: invert(1);
-            animation: fadeInDelayed 2.5s ease-in-out 1.5s forwards;
+            animation: fadeIn 2s ease-in-out forwards, breathing 5s infinite ease-in-out;
+        }
+
+        @keyframes breathing {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         @keyframes fadeInDelayed {
@@ -120,7 +127,7 @@
                 <p>Rian is “that” guy with the untamed mohawk and worn-in 501s on the morning train. He’ll also be “that” guy you swear you know from somewhere in a finely tailored tux at the opera tonight. And when you blink during your double take, you might just see yourself reflected in his work.</p>
             </div>
 
-            <img src="./images/rian-illustration.jpeg" alt="Illustration of Rian Kochel" class="illustration fade-in">
+            <img src="images/rian-illustration-white.png" alt="Illustration of Rian Kochel" class="illustration fade-in">
         </div>
 
         <nav>

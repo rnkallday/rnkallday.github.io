@@ -87,6 +87,8 @@
 
         // Restore Interactive Mouse Movement Effect
         const interactiveElements = document.querySelectorAll('.interactive-text');
+        let scaleWidth = 1.05;
+        let scaleHeight = 1.05;
         document.addEventListener('mousemove', (e) => {
             const { clientX, clientY } = e;
             interactiveElements.forEach(el => {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Rian Kochel</title>
+    <title>About - Rian's Portfolio</title>
     <script src="https://cdn.tailwindcss.com" defer></script>
     <link rel="stylesheet" href="styles/animations.css">
     
@@ -100,12 +100,31 @@
         nav a {
             font-size: 1.25rem;
         }
+
+        @keyframes fadeInMove {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-move {
+            animation: fadeInMove 1s ease-out forwards;
+        }
+
+        .interactive-text {
+            transition: transform 0.2s ease;
+        }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-green-400 to-blue-500 text-white">
+<body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
     <header class="p-6 flex justify-between items-center">
         <nav class="flex flex-col gap-4 fixed bottom-6 right-6 text-lg">
-            <a href="index.html" class="hover:opacity-80">HOME</a>
+            <a href="about.html" class="hover:opacity-80">ABOUT</a>
             <a href="work.html" class="hover:opacity-80">WORK</a>
             <a href="contact.html" class="hover:opacity-80">CONTACT</a>
         </nav>
@@ -113,7 +132,7 @@
 
     <main class="p-6">
         <div class="about-container">
-            <div id="about-title" class="text-[10vw] leading-none tracking-tight fade-in">
+            <div id="about-title" class="text-[13.5vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
                 ABOUT
                 <div class="draw-line mt-2"></div>
             </div>
@@ -142,6 +161,12 @@
         setTimeout(() => {
             line.style.width = '100%';
         }, 1500);
+
+        // Fade-in Animation for the "ABOUT" title
+        const aboutTitle = document.getElementById('about-title');
+        setTimeout(() => {
+            aboutTitle.classList.remove('opacity-0');
+        }, 500);
     });
     </script>
 </body>

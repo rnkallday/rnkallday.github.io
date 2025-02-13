@@ -147,6 +147,20 @@
         setTimeout(() => {
             aboutTitle.classList.remove('opacity-0');
         }, 500);
+
+        // Interactive text effect
+        const interactiveText = document.querySelector('.interactive-text');
+        const scaleWidth = 20;
+        const scaleHeight = 10;
+
+        document.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
+            const xPos = (clientX / innerWidth - 0.5) * scaleWidth;
+            const yPos = (clientY / innerHeight - 0.5) * scaleHeight;
+
+            interactiveText.style.transform = `translate(${xPos}px, ${yPos}px)`;
+        });
     });
     </script>
 </body>

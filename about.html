@@ -38,33 +38,29 @@
         .draw-line {
             width: 0;
             height: 4px;
-            background-color: rgb(243 232 255);
+            background-color: white;
             transition: width 1.5s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
         .about-container {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            max-width: 90%;
-            margin: 0 auto;
-            padding: 40px;
-            height: 100vh;
+            align-items: center;
+            max-width: 80%;
+            margin: 40px auto;
         }
 
         #about-title {
-            text-align: left;
-            margin-bottom: 2rem;
+            text-align: center;
         }
 
         .bio-text {
             font-size: 1.25rem;
             line-height: 1.6;
-            text-align: left;
+            text-align: center;
             max-width: 800px;
             margin: 20px 0;
         }
-        
         .bio-text p {
             margin-bottom: 1.5rem;
         }
@@ -73,10 +69,8 @@
             width: 100%;
             max-width: 300px;
             opacity: 0;
-            filter: invert(0);
+            filter: invert(1);
             animation: fadeInDelayed 2.5s ease-in-out 1.5s forwards;
-            align-self: flex-end;
-            margin-top: -200px;
         }
 
         @keyframes fadeInDelayed {
@@ -90,47 +84,30 @@
             }
         }
 
-        .side-nav {
-            position: fixed;
-            bottom: 6rem;
-            right: 2rem;
+        nav {
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            z-index: 10;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
         }
 
-        .side-nav a {
+        nav a {
             font-size: 1.25rem;
-            transition: opacity 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .about-container {
-                padding: 20px;
-            }
-            
-            .illustration {
-                margin-top: 0;
-                align-self: center;
-            }
-            
-            #about-title {
-                font-size: 3rem;
-            }
         }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 text-purple-100">
-    <nav class="side-nav">
-        <a href="index.html" class="hover:opacity-80">HOME</a>
-        <a href="work.html" class="hover:opacity-80">WORK</a>
-        <a href="contact.html" class="hover:opacity-80">CONTACT</a>
-    </nav>
+<body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
+    <header class="p-6 flex justify-between items-center">
+        <nav class="flex flex-col gap-4 fixed bottom-6 right-6 text-lg">
+            <a href="index.html" class="hover:opacity-80">HOME</a>
+            <a href="work.html" class="hover:opacity-80">WORK</a>
+            <a href="contact.html" class="hover:opacity-80">CONTACT</a>
+        </nav>
+    </header>
 
-    <main>
+    <main class="p-6">
         <div class="about-container">
-            <div id="about-title" class="text-[8vw] leading-none tracking-tight fade-in">
+            <div id="about-title" class="text-[10vw] leading-none tracking-tight fade-in">
                 ABOUT
                 <div class="draw-line mt-2"></div>
             </div>
@@ -138,13 +115,19 @@
             <div class="bio-text fade-in">
                 <p>Rian Kochel tells stories—some with words, some with music, all with intent. A writer, musician, and creative technologist, he stands at the crossroads of tradition and progress, watching the world evolve and dragging the skeptics along for the ride. His work spans across a wide variance - from art and culture to AI - and it can be found published in places that care about such things.</p>
                 
-                <p>He's washed dishes with ex-convicts, raised millions for the arts, and learned that the only real job security is curiosity. Rian doesn't believe AI can steal your soul, but he is certain it can make you forget you had one. He writes to remind you of this.</p>
+                <p>He’s washed dishes with ex-convicts, raised millions for the arts, and learned that the only real job security is curiosity. Rian doesn’t believe AI can steal your soul, but he is certain it can make you forget you had one. He writes to remind you of this.</p>
                 
-                <p>Rian is "that" guy with the untamed mohawk and worn-in 501s on the morning train. He'll also be "that" guy you swear you know from somewhere in a finely tailored tux at the opera tonight. And when you blink during your double take, you might just see yourself reflected in his work.</p>
+                <p>Rian is “that” guy with the untamed mohawk and worn-in 501s on the morning train. He’ll also be “that” guy you swear you know from somewhere in a finely tailored tux at the opera tonight. And when you blink during your double take, you might just see yourself reflected in his work.</p>
             </div>
 
             <img src="./images/rian-illustration.jpeg" alt="Illustration of Rian Kochel" class="illustration fade-in">
         </div>
+
+        <nav>
+            <a href="index.html" class="hover:opacity-80">HOME</a>
+            <a href="work.html" class="hover:opacity-80">WORK</a>
+            <a href="contact.html" class="hover:opacity-80">CONTACT</a>
+        </nav>
     </main>
 
     <script>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work - Rian's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <link rel="stylesheet" href="styles/animations.css">
+    
+    <style>
+        @font-face {
+            font-family: 'Chunk';
+            src: url('/fonts/chunk.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Chunk', sans-serif;
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .draw-line {
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            transition: width 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .work-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 80%;
+            margin: 40px auto;
+        }
+
+        #work-title {
+            text-align: left;
+        }
+
+        .bio-text {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            text-align: left;
+            max-width: 800px;
+            margin: 20px 0;
+        }
+        .bio-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .illustration {
+            position: fixed;
+            bottom: 150px;
+            right: 100px;
+            width: 175px;
+            opacity: 0;
+            animation: fadeInDelayed 2.5s ease-in-out 1.5s forwards, breathing 5s infinite ease-in-out;
+        }
+
+        @keyframes breathing {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeInDelayed {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        nav a {
+            font-size: 1.25rem;
+        }
+
+        @keyframes fadeInMove {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-move {
+            animation: fadeInMove 1s ease-out forwards;
+        }
+
+        .interactive-text {
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
+    <header class="p-6 flex justify-between items-center">
+        <nav class="flex flex-col gap-4 fixed bottom-6 right-6 text-lg">
+            <a href="index.html" class="hover:opacity-80">HOME</a>
+            <a href="about.html" class="hover:opacity-80">ABOUT</a>
+            <a href="work.html" class="hover:opacity-80">WORK</a>
+            <a href="contact.html" class="hover:opacity-80">CONTACT</a>
+        </nav>
+    </header>
+
+    <main class="p-6">
+        <div class="work-container">
+            <div id="work-title" class="text-[13.5vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
+                WORK
+                <div class="draw-line mt-2"></div>
+            </div>
+
+            <div class="bio-text fade-in">
+                <p>Rian Kochel tells stories—some with words, some with music, all with intent. A writer, musician, and advocate for AI literacy, he stands at the crossroads of tradition and progress, watching the world evolve and dragging the skeptics along for the ride. His work spans across a wide variance - from art and culture to AI - and it can be found published in places that care about such things.</p>
+                
+                <p>He’s washed dishes with ex-convicts, raised millions for the arts, and learned that the only real job security is curiosity. Rian doesn’t believe AI can steal your soul, but he is certain it can make you forget you had one. He writes to remind you of this.</p>
+                
+                <p>Rian is “that” guy with the untamed mohawk and worn-in 501s on the morning train. He’ll also be “that” guy you swear you know from somewhere in a finely tailored tux at the opera tonight. And when you blink during your double take, you might just see yourself reflected in his work.</p>
+            </div>
+
+            <img src="/images/rian-illustration-white.png" alt="Illustration of Rian Kochel" class="illustration fade-in">
+        </div>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const line = document.querySelector('.draw-line');
+        setTimeout(() => {
+            line.style.width = '100%';
+        }, 1500);
+
+        // Fade-in Animation for the "WORK" title
+        const workTitle = document.getElementById('work-title');
+        setTimeout(() => {
+            workTitle.classList.remove('opacity-0');
+        }, 500);
+    });
+    </script>
+</body>
+</html>

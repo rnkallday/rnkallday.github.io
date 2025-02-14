@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rian's Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/styles/animations.css">
+    <link rel="stylesheet" href="/styles/tailwind.css">
+    <link rel="stylesheet" href="styles/animations.css">
     <style>
         @font-face {
             font-family: 'Chunk';
-            src: url('/fonts/chunk.woff') format('woff');
+            src: url('../fonts/chunk.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
@@ -34,7 +34,7 @@
         }
 
         .interactive-text {
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease-in-out;
         }
 
         .draw-line {
@@ -45,7 +45,13 @@
         }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
+<body class="
+    min-h-screen 
+    bg-gradient-to-br 
+    from-sky-400 
+    to-indigo-500 
+    text-white
+">
     <header class="p-6 flex justify-between items-center">
         <nav class="flex flex-col gap-4 fixed bottom-6 right-6 text-lg">
             <a href="about.html" class="hover:opacity-80">ABOUT</a>
@@ -86,7 +92,11 @@
         }, 500);
 
         // Restore Interactive Mouse Movement Effect
-        const interactiveElements = document.querySelectorAll('.interactive-text');
+                el.style.transform = `scale(${scaleWidth}, ${scaleHeight})`;
+                clearTimeout(el.resetTimeout);
+                el.resetTimeout = setTimeout(() => {
+                    el.style.transform = 'scale(1, 1)';
+                }, 200);
         let scaleWidth = 1.05;
         let scaleHeight = 1.05;
         document.addEventListener('mousemove', (e) => {

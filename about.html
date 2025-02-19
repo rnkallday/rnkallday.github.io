@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Rian's Portfolio</title>
-    <script src="https://cdn.tailwindcss.com" defer></script>
-    <link rel="stylesheet" href="styles/animations.css">
-    
+    <title>Rian's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles/animations.css">
     <style>
         @font-face {
             font-family: 'Chunk';
@@ -17,73 +16,6 @@
 
         body {
             font-family: 'Chunk', sans-serif;
-        }
-
-        .draw-line {
-            width: 100%;
-            height: 4px;
-            background-color: white;
-            transition: width 1.5s cubic-bezier(0.77, 0, 0.175, 1);
-        }
-
-        .about-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            max-width: 80%;
-            margin: 40px auto;
-        }
-
-        #about-title {
-            text-align: left;
-        }
-
-        .bio-text {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            text-align: left;
-            max-width: 800px;
-            margin: 20px 0;
-        }
-        .bio-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .illustration {
-            position: fixed;
-            bottom: 150px;
-            right: 100px;
-            width: 175px;
-            opacity: 0;
-            animation: fadeInDelayed 2.5s ease-in-out 1.5s forwards, breathing 5s infinite ease-in-out;
-        }
-
-        @keyframes breathing {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        @keyframes fadeInDelayed {
-            from {
-                opacity: 0;
-                transform: translateX(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        nav a {
-            font-size: 1.25rem;
         }
 
         @keyframes fadeInMove {
@@ -104,6 +36,13 @@
         .interactive-text {
             transition: transform 0.2s ease;
         }
+
+        .draw-line {
+            width: 0;
+            height: 4px;
+            background-color: white;
+            transition: width 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
     </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
@@ -116,49 +55,49 @@
     </header>
 
     <main class="p-6">
-        <div class="about-container">
-            <div id="about-title" class="text-[13.5vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
-                ABOUT
-                <div class="draw-line mt-2"></div>
+        <!-- Restored "Word Nerd" Title & Animation -->
+        <div id="word-nerd" class="text-[13.5vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
+            ABOUT
+            <div class="flex items-center h-full interactive-text">
+                <div class="draw-line mr-4"></div>
+                ME
             </div>
-
-            <div class="bio-text fade-in">
-                <p>Rian Kochel tells stories—some with words, some with music, all with intent. A writer, musician, and advocate for AI literacy, he stands at the crossroads of tradition and progress, watching the world evolve and dragging the skeptics along for the ride. His work spans across a wide variance - from art and culture to AI - and it can be found published in places that care about such things.</p>
-                
-                <p>He’s washed dishes with ex-convicts, raised millions for the arts, and learned that the only real job security is curiosity. Rian doesn’t believe AI can steal your soul, but he is certain it can make you forget you had one. He writes to remind you of this.</p>
-                
-                <p>Rian is “that” guy with the untamed mohawk and worn-in 501s on the morning train. He’ll also be “that” guy you swear you know from somewhere in a finely tailored tux at the opera tonight. And when you blink during your double take, you might just see yourself reflected in his work.</p>
-            </div>
-
-            <img src="/images/rian-illustration-white.png" alt="Illustration of Rian Kochel" class="illustration fade-in">
         </div>
+
+        <!-- Portfolio Intro Text -->
+        <div class="bio-text fade-in">
+            <p>I tell stories—some with words, some with music, all with intent. As a writer, musician, and advocate for AI literacy, I stand at the crossroads of tradition and progress, watching the world evolve and dragging the skeptics along for the ride. My work spans a wide range—from art and culture to AI—and you’ll find it published in places that care about such things.</p>
+            
+            <p>I’ve washed dishes with ex-convicts, raised millions for the arts, and learned that the only real job security is curiosity. I don’t believe AI can steal your soul, but I’m certain it can make you forget you had one. I write to remind you of this.</p>
+            
+            <p>I’m that guy with the untamed mohawk and worn-in 501s on the morning train. I’ll also be that guy you swear you know from somewhere, standing in a finely tailored tux at the opera tonight. And when you blink during your double take, you might just see yourself reflected in my work.</p>
+        </div></div>
+      
     </main>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Restore Draw Line Animation
         const line = document.querySelector('.draw-line');
         setTimeout(() => {
             line.style.width = '100%';
         }, 1500);
 
-        // Fade-in Animation for the "ABOUT" title
-        const aboutTitle = document.getElementById('about-title');
+        // Restore Fade-in Animation for "WORD NERD"
+        const wordNerd = document.getElementById('word-nerd');
         setTimeout(() => {
-            aboutTitle.classList.remove('opacity-0');
+            wordNerd.classList.remove('opacity-0');
         }, 500);
 
-        // Interactive text effect
-        const interactiveText = document.querySelector('.interactive-text');
-        const scaleWidth = 20;
-        const scaleHeight = 10;
-
+        // Restore Interactive Mouse Movement Effect
+        const interactiveElements = document.querySelectorAll('.interactive-text');
+        let scaleWidth = 1.05;
+        let scaleHeight = 1.05;
         document.addEventListener('mousemove', (e) => {
             const { clientX, clientY } = e;
-            const { innerWidth, innerHeight } = window;
-            const xPos = (clientX / innerWidth - 0.5) * scaleWidth;
-            const yPos = (clientY / innerHeight - 0.5) * scaleHeight;
-
-            interactiveText.style.transform = `translate(${xPos}px, ${yPos}px)`;
+            interactiveElements.forEach(el => {
+                el.style.transform = `scale(${scaleWidth}, ${scaleHeight})`;
+            });
         });
     });
     </script>

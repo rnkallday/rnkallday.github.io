@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rian's Portfolio</title>
+    <title>Rian's Work</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/styles/animations.css">
     <style>
@@ -43,6 +43,17 @@
             background-color: white;
             transition: width 1.5s cubic-bezier(0.77, 0, 0.175, 1);
         }
+
+        .content-container {
+            animation: fadeInMove 1.5s ease-out forwards;
+            animation-delay: 0.8s;
+            opacity: 0;
+        }
+
+        .iframe-container {
+            margin-top: 2rem;
+            max-width: 1200px;
+        }
     </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-sky-400 to-indigo-500 text-white">
@@ -55,20 +66,28 @@
     </header>
 
     <main class="p-6">
-        <!-- Restored "Word Nerd" Title & Animation -->
-        <div id="word-nerd" class="text-[13.5vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
-            WORD
-            <div class="flex items-center h-full interactive-text">
-                <div class="draw-line mr-4"></div>
-
-                NERD
-            </div>
+        <!-- Work Content -->
+        <div id="work-title" class="text-[10vw] leading-none tracking-tight opacity-0 transition-opacity duration-500 fade-in-move interactive-text">
+            WORK
+            <div class="draw-line mt-2"></div>
         </div>
 
-        <!-- Portfolio Intro Text -->
         <div class="mt-20 text-[2.1875rem]">
-            <p>A PORTFOLIO OF MULTIMEDIA WORK</p>
-            <p>CREATED BY RIAN KOCHEL</p>
+            <p>Here is a collection of my work.</p>
+            
+            <!-- Content container with fade-in animation -->
+            <div class="content-container">
+                <div class="iframe-container">
+                    <iframe 
+                        referrerpolicy="origin" 
+                        scrolling="no" 
+                        src="https://authory.com/rnkalllllday/embed?theme=light&numItems=5&mode=compact&showSocialMedia=false&showHighlight=false&useCover=false" 
+                        width="100%" 
+                        height="549px" 
+                        style="border-radius:18px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);" 
+                    ></iframe>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -80,22 +99,11 @@
             line.style.width = '100%';
         }, 1500);
 
-        // Restore Fade-in Animation for "WORD NERD"
-        const wordNerd = document.getElementById('word-nerd');
+        // Restore Fade-in Animation for "WORK"
+        const workTitle = document.getElementById('work-title');
         setTimeout(() => {
-            wordNerd.classList.remove('opacity-0');
+            workTitle.classList.remove('opacity-0');
         }, 500);
-
-        // Restore Interactive Mouse Movement Effect
-        const interactiveElements = document.querySelectorAll('.interactive-text');
-        let scaleWidth = 1.05;
-        let scaleHeight = 1.05;
-        document.addEventListener('mousemove', (e) => {
-            const { clientX, clientY } = e;
-            interactiveElements.forEach(el => {
-                el.style.transform = `scale(${scaleWidth}, ${scaleHeight})`;
-            });
-        });
     });
     </script>
 </body>

@@ -1,0 +1,41 @@
+/* Example from your existing animations.css */
+
+@keyframes fadeInMove {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-move {
+  animation: fadeInMove 1s ease-out forwards;
+}
+
+/* Peek-up animation */
+@keyframes peekUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.peek-up {
+  animation: peekUp 1s ease forwards;
+}
+
+/* If you don’t need draw-line anymore, remove it 
+   or leave it if you still use it somewhere else. */
+.draw-line {
+  width: 0px;
+  height: 4px;
+  background-color: white;
+  transition: width 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+}

@@ -74,3 +74,26 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 1500ms;
 }
+/* Fade-in Image Animation for "NERD" */
+@keyframes fadeInImage {
+  0% {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+#nerd-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 1px; /* Adjust size as needed */
+  height: auto;
+  animation: fadeInImage 1s ease-out forwards;
+  animation-delay: 2s; /* Delay to ensure it appears after text animation */
+}
